@@ -52,7 +52,13 @@ You can also use the clone command above if you prefer to install it yourself.
 
 ## Quick start
 
-1. Request a data export from ChatGPT and download the ZIP when it arrives.
+1. Request your official ChatGPT data export:
+   - Sign in to the ChatGPT account whose history you want to analyze, then open the **profile menu → Settings → Data Controls → Export Data → Export → Confirm export**.
+   - Wait for the email (or SMS). It can take up to seven days; check spam and promotional folders too.
+   - While signed in to that same account, open the message and choose **Download data export**. The download link expires after 24 hours.
+   - Keep the downloaded ZIP private. You can give the ZIP directly to this Skill—there is no need to extract it first.
+
+   See [OpenAI's official export guide](https://help.openai.com/en/articles/7260999-exporting-your-chatgpt-history-and-data) if the settings labels differ.
 2. Provide the ZIP, extracted directory, or `conversations.json` to Codex with an unused local output directory.
 3. The Skill runs the preparer:
 
