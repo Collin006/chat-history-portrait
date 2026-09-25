@@ -1,5 +1,7 @@
 # Chat History Portrait
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 Turn an official ChatGPT data export into an evidence-grounded private portrait, then—only if the user chooses—into a deliberately redacted shareable identity package.
 
 This is a [Codex Skill](https://developers.openai.com/codex/skills/) for people who want to understand long-running patterns in their own conversation history: recurring questions, working style, changes over time, creative threads, and story-worthy tensions.
