@@ -52,7 +52,13 @@ https://github.com/Collin006/chat-history-portrait
 
 ## 快速开始
 
-1. 在 ChatGPT 请求数据导出，邮件到达后下载 ZIP。
+1. 在 ChatGPT 申请官方数据导出：
+   - 登录你要分析聊天记录的 ChatGPT 账号，依次点击 **头像菜单 → 设置（Settings）→ 数据控制（Data Controls）→ 导出数据（Export Data）→ 导出（Export）→ 确认导出（Confirm export）**。
+   - 等待邮件（或短信）通知，最长可能需要七天；同时检查垃圾邮件和推广邮件文件夹。
+   - 保持登录同一个账号，打开通知后点击 **下载数据导出（Download data export）**。下载链接会在 24 小时后失效。
+   - 妥善保存下载的 ZIP，它无需解压，可以直接交给这个 Skill 处理。
+
+   如果你的界面文案不同，可查看 [OpenAI 官方导出说明](https://help.openai.com/en/articles/7260999-exporting-your-chatgpt-history-and-data)。
 2. 将 ZIP、已解压目录或 `conversations.json` 提供给 Codex，同时准备一个未使用的本地输出目录。
 3. Skill 会运行预处理器：
 
