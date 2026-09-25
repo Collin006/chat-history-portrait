@@ -40,13 +40,15 @@ Use $chat-history-portrait to analyze my ChatGPT export locally and build an evi
 
 ### Install with Codex
 
-You can also paste this message into Codex:
+Copy this repository URL directly into Codex, then ask it to install the Skill:
 
 ```text
-Please install the Chat History Portrait skill from https://github.com/Collin006/chat-history-portrait into my local Codex skills directory.
+https://github.com/Collin006/chat-history-portrait
+
+Install this Chat History Portrait Skill for me.
 ```
 
-Codex can then clone the repository or guide you through the local installation. This repository is currently a standalone Skill directory, not a one-click Codex Plugin package.
+You can also use the clone command above if you prefer to install it yourself.
 
 ## Quick start
 
