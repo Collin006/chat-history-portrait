@@ -40,13 +40,15 @@ Use $chat-history-portrait to analyze my ChatGPT export locally and build an evi
 
 ### 直接交给 Codex 安装
 
-也可以把下面这段直接复制给 Codex：
+直接把下面的 GitHub 链接复制给 Codex，再说“帮我安装这个 Skill”：
 
 ```text
-请将 GitHub 仓库 https://github.com/Collin006/chat-history-portrait 中的 Chat History Portrait Skill 安装到我的本地 Codex Skills 目录。
+https://github.com/Collin006/chat-history-portrait
+
+帮我安装这个 Chat History Portrait Skill。
 ```
 
-Codex 可以克隆仓库或引导完成本地安装。当前仓库是独立的 Skill 目录，尚未包装成可一键添加的 Codex Plugin。
+如果希望自己安装，也可以使用上面的克隆命令。
 
 ## 快速开始
 
