@@ -1,6 +1,6 @@
 # Chat History Portrait
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+[English](https://github.com/Collin006/chat-history-portrait/tree/main) | [简体中文](https://github.com/Collin006/chat-history-portrait/tree/zh-CN)
 
 Turn an official ChatGPT data export into an evidence-grounded private portrait, then—only if the user chooses—into a deliberately redacted shareable identity package.
 

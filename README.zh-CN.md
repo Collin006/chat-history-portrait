@@ -1,6 +1,6 @@
 # Chat History Portrait
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+[English](https://github.com/Collin006/chat-history-portrait/tree/main) | [简体中文](https://github.com/Collin006/chat-history-portrait/tree/zh-CN)
 
 将 ChatGPT 官方导出转化为一份有证据支撑的私密个人画像；只有在用户明确选择后，才进一步生成经过脱敏的可分享身份包。
 
