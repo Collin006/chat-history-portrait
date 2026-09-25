@@ -38,6 +38,16 @@ Then invoke it in Codex:
 Use $chat-history-portrait to analyze my ChatGPT export locally and build an evidence-grounded private portrait.
 ```
 
+### Install with Codex
+
+You can also paste this message into Codex:
+
+```text
+Please install the Chat History Portrait skill from https://github.com/Collin006/chat-history-portrait into my local Codex skills directory.
+```
+
+Codex can then clone the repository or guide you through the local installation. This repository is currently a standalone Skill directory, not a one-click Codex Plugin package.
+
 ## Quick start
 
 1. Request a data export from ChatGPT and download the ZIP when it arrives.

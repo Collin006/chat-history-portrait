@@ -38,6 +38,16 @@ git clone https://github.com/Collin006/chat-history-portrait.git ~/.codex/skills
 Use $chat-history-portrait to analyze my ChatGPT export locally and build an evidence-grounded private portrait.
 ```
 
+### 直接交给 Codex 安装
+
+也可以把下面这段直接复制给 Codex：
+
+```text
+请将 GitHub 仓库 https://github.com/Collin006/chat-history-portrait 中的 Chat History Portrait Skill 安装到我的本地 Codex Skills 目录。
+```
+
+Codex 可以克隆仓库或引导完成本地安装。当前仓库是独立的 Skill 目录，尚未包装成可一键添加的 Codex Plugin。
+
 ## 快速开始
 
 1. 在 ChatGPT 请求数据导出，邮件到达后下载 ZIP。
