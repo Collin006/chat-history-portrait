@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chat-history-portrait:schema:insight:1.0",
+  "title": "Evidence-grounded portrait insight",
+  "type": "object",
+  "required": ["schema_version", "insight_id", "recipe_id", "dimension", "status", "claim_type", "text", "confidence", "coverage", "support", "counterevidence", "contamination_warnings", "sensitivity", "disconfirmation", "calibration_status"],
+  "properties": {
+    "schema_version": {"const": "portrait-insight/1.0"},
+    "insight_id": {"type": "string", "pattern": "^ins_[A-Za-z0-9_-]+$"},
+    "recipe_id": {"type": "string", "minLength": 1},
+    "dimension": {"type": "string", "minLength": 1},
+    "status": {"enum": ["supported", "insufficient_evidence", "needs_user_context"]},
+    "claim_type": {"enum": ["stated_fact", "observed_pattern", "editorial_hypothesis"]},
+    "text": {"type": "string", "minLength": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "coverage": {"type": "object", "required": ["independent_contexts", "timespan_days"], "properties": {"independent_contexts": {"type": "integer", "minimum": 0}, "timespan_days": {"type": "integer", "minimum": 0}, "periods": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false},
+    "support": {"type": "array", "items": {"$ref": "private-profile.schema.json#/$defs/evidence"}},
+    "counterevidence": {"type": "array", "items": {"$ref": "private-profile.schema.json#/$defs/evidence"}},
+    "contamination_warnings": {"type": "array", "items": {"type": "string"}},
+    "sensitivity": {"enum": ["low", "medium", "high", "restricted"]},
+    "disconfirmation": {"type": "string", "minLength": 1},
+    "calibration_status": {"enum": ["pending_user_review", "accepted", "edited", "rejected", "keep_private"]}
+  },
+  "additionalProperties": true
+}

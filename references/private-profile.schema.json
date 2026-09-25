@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chat-history-portrait:schema:private:1.0",
+  "title": "Private Chat History Portrait",
+  "type": "object",
+  "required": ["schema_version", "profile_id", "generated_at", "corpus", "claims", "timeline", "themes", "tensions", "story_material", "limitations"],
+  "properties": {
+    "schema_version": {"const": "portrait-private/1.0"},
+    "profile_id": {"type": "string", "minLength": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "corpus": {
+      "type": "object",
+      "required": ["manifest_schema", "conversation_count", "user_turn_count", "batch_count"],
+      "properties": {
+        "manifest_schema": {"type": "string"},
+        "conversation_count": {"type": "integer", "minimum": 0},
+        "user_turn_count": {"type": "integer", "minimum": 0},
+        "batch_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "claim_type", "text", "confidence", "support", "counterevidence", "sensitivity", "disconfirmation", "status"],
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^clm_[A-Za-z0-9_-]+$"},
+          "claim_type": {"enum": ["stated_fact", "observed_pattern", "editorial_hypothesis"]},
+          "text": {"type": "string", "minLength": 1},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "support": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+          "counterevidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+          "sensitivity": {"enum": ["low", "medium", "high", "restricted"]},
+          "disconfirmation": {"type": "string"},
+          "status": {"enum": ["pending_user_review", "accepted", "edited", "rejected", "keep_private"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "timeline": {"type": "array", "items": {"type": "object"}},
+    "themes": {"type": "array", "items": {"type": "object"}},
+    "tensions": {"type": "array", "items": {"type": "object"}},
+    "story_material": {"type": "array", "items": {"type": "object"}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": ["source_ref", "reason"],
+      "properties": {
+        "source_ref": {"type": "string", "pattern": "^c[0-9]{6}:u[0-9]{4}$"},
+        "reason": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

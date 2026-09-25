@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:chat-history-portrait:schema:recipe:1.0",
+  "title": "Chat history portrait recipe",
+  "type": "object",
+  "required": ["schema_version", "id", "version", "title", "purpose", "privacy", "dimensions", "output"],
+  "properties": {
+    "schema_version": {"const": "portrait-recipe/1.0"},
+    "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "purpose": {"type": "string", "minLength": 1},
+    "privacy": {"enum": ["private_default", "public_candidate_after_calibration"]},
+    "dimensions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/dimension"}},
+    "output": {"type": "object", "required": ["private_sections", "public_forms"], "properties": {"private_sections": {"type": "array", "items": {"type": "string"}}, "public_forms": {"type": "array", "items": {"enum": ["none", "story_angle", "share_card", "profile_section", "long_form"]}}}, "additionalProperties": false}
+  },
+  "$defs": {
+    "dimension": {"type": "object", "required": ["id", "question", "minimum_evidence"], "properties": {"id": {"type": "string", "pattern": "^[a-z0-9-]+$"}, "question": {"type": "string", "minLength": 1}, "minimum_evidence": {"type": "object", "required": ["independent_contexts", "timespan_days", "seek_counterevidence"], "properties": {"independent_contexts": {"type": "integer", "minimum": 1}, "timespan_days": {"type": "integer", "minimum": 0}, "seek_counterevidence": {"const": true}}, "additionalProperties": false}}, "additionalProperties": false}
+  },
+  "additionalProperties": false
+}
